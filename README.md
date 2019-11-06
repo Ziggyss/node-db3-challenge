@@ -22,7 +22,7 @@ Visit [SQL Try Editor at W3Schools.com](https://www.w3schools.com/Sql/tryit.asp?
 SELECT ProductName, CategoryName
 FROM Products as P
 JOIN Categories as C
-ON P.categoryID = C.CategoryID
+ON P.categoryID = C.CategoryID;
 
 - Display the OrderID and ShipperName for all orders placed before January 9, 1997. Shows 161 records.
 SELECT OrderID, ShipperName, OrderDate
@@ -36,7 +36,8 @@ SELECT ProductName, Quantity
 FROM OrderDetails as O
 JOIN Products as P
 ON O.ProductID = P.ProductID
-WHERE OrderID = 10251;
+WHERE OrderID = 10251
+ORDER BY ProductName;
 
 - Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
 SELECT OrderId, CustomerName, LastName as EmployeeLastName
@@ -44,7 +45,7 @@ FROM Orders as O
 JOIN Customers as C
 ON C.CustomerID = O.CustomerID
 JOIN Employees as E
-ON E.EmployeeID = O.EmployeeID
+ON E.EmployeeID = O.EmployeeID;
 
 ### Database Methods
 
