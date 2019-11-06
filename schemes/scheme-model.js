@@ -29,10 +29,11 @@ function findSteps(id) {
 }
 
 function add(scheme) {
-  return db("schemes").insert(scheme);
-  // .then(ids => {
-  //   return findById(ids[0]);
-  // });
+  return db("schemes")
+    .insert(scheme)
+    .then(ids => {
+      return findById(ids[0]);
+    });
 }
 
 function update(changes, id) {
@@ -47,11 +48,7 @@ function remove(id) {
     .del();
 }
 
-function addStep(step, scheme_id) {
+function addStep({ instructions, step_number }, scheme_id) {
   return db("steps")
-    .insert(...step)
-    .where({ scheme_id });
-  // .then(ids => {
-  //   return findById(ids[0]);
-  // });
+    .insert({ instructions, step_number, scheme_id })
 }
